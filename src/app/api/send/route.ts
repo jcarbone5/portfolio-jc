@@ -17,7 +17,7 @@ export async function POST(req: Request) {
       from: process.env.USER_EMAIL_ADDRESS,
       to: "jean_f991@hotmail.com",
       subject: `New message from ${name}`,
-      text: `Name: ${name}\n Email: ${email}\ Message:\n${message}`,
+      text: `Name: ${name}\nEmail: ${email}\nMessage:\n${message}`,
     };
 
     const { messageId } = await transporter.sendMail(mailOptions);

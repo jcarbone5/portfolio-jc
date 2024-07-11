@@ -1,11 +1,19 @@
+"use client";
+
+import { useTranslation } from "react-i18next";
+
 //Helpers
 import { contactInformation } from "@/helpers";
 
 export const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="flex flex-row justify-between py-6">
       <div className="text-sm sm:text-md text-dark dark:text-gray-300 space-x-2">
-        <span>© {new Date().getFullYear()} Made with 🩷 by Jean Carbone</span>
+        <span>
+          © {new Date().getFullYear()} {t("footer.information")}
+        </span>
       </div>
 
       <div className="flex flex-row items-center space-x-4 sm:space-x-6">

@@ -41,7 +41,7 @@ export const ThemeSwitcher = () => {
       className={cn(
         "flex items-center justify-center cursor-pointer rounded-full p-2 z-10 bg-gray-100/20 transition duration-500 hover:scale-110",
         isScrolled &&
-          "fixed hidden md:block top-7 transform translate-x-[120px] transform backdrop-blur bg-gray-300/50 dark:bg-black/30"
+          "fixed hidden md:block top-7 transform translate-x-[90px] transform backdrop-blur bg-gray-300/50 dark:bg-black/30"
       )}
       onClick={toggleTheme}
     >

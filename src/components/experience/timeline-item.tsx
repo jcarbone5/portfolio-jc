@@ -40,7 +40,7 @@ export const TimelineItem = ({
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-row items-center gap-2 px-2 py-1 sm:py-2 sm:px-4 bg-gray-100 text-gray-900 dark:bg-black/20 dark:text-white rounded-full w-fit text-xs sm:text-sm font-light"
+          className="flex flex-row items-center gap-2 px-3 py-2 sm:px-4 sm:py-2 bg-gray-100 text-gray-900 dark:bg-black/20 dark:text-white rounded-full w-fit text-xs sm:text-sm font-light"
         >
           <Globe className="h-4 w-4 sm:h-6 sm:w-6" />
           <span>{url}</span>

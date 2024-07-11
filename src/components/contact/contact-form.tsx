@@ -3,16 +3,17 @@
 import { z } from "zod";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useTranslation } from "react-i18next";
 
-const contactFormSchema = z.object({
-  name: z.string().min(1, "Full name is required"),
-  email: z.string().email("Invalid email address"),
-  message: z.string().min(1, "Message is required"),
-});
-
-type ContactFormSchema = z.infer<typeof contactFormSchema>;
+//Schema
+import { useContactFormSchema } from "@/lib/schemas";
 
 export const ContactForm = () => {
+  const { t } = useTranslation();
+
+  const { contactFormSchema } = useContactFormSchema();
+  type ContactFormSchema = z.infer<typeof contactFormSchema>;
+
   const {
     register,
     handleSubmit,
@@ -49,10 +50,12 @@ export const ContactForm = () => {
   return (
     <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
       <div className="space-y-2">
-        <label className="text-black dark:text-white text-md">Full name</label>
+        <label className="text-black dark:text-white text-md">
+          {t("contact.labels.name")}
+        </label>
         <input
           type="text"
-          placeholder="Full name"
+          placeholder={t("contact.placeholders.name")}
           className="p-3 rounded-lg w-full text-black bg-gray-100 dark:text-white dark:bg-black/20"
           {...register("name")}
         />
@@ -62,10 +65,12 @@ export const ContactForm = () => {
       </div>
 
       <div className="space-y-2">
-        <label className="text-black dark:text-white text-md">Email</label>
+        <label className="text-black dark:text-white text-md">
+          {t("contact.labels.email")}
+        </label>
         <input
           type="email"
-          placeholder="email@domain.com"
+          placeholder={t("contact.placeholders.email")}
           className="p-3 rounded-lg w-full text-black bg-gray-100 dark:text-white dark:bg-black/20"
           {...register("email")}
         />
@@ -75,9 +80,11 @@ export const ContactForm = () => {
       </div>
 
       <div className="space-y-2">
-        <label className="text-black dark:text-white text-md">Message</label>
+        <label className="text-black dark:text-white text-md">
+          {t("contact.labels.message")}
+        </label>
         <textarea
-          placeholder="Type your message"
+          placeholder={t("contact.placeholders.message")}
           cols={30}
           rows={5}
           className="p-3 rounded-lg w-full text-black bg-gray-100 dark:text-white dark:bg-black/20"
@@ -92,9 +99,9 @@ export const ContactForm = () => {
         type="submit"
         className="py-2 px-4 bg-teal-700 text-white shadow rounded-md disabled:bg-teal-700/30"
         disabled={isSubmitting}
-        aria-labelledby="Send Message"
+        aria-labelledby={t("contact.button.text")}
       >
-        {isSubmitting ? "Sending" : "Send Message"}
+        {isSubmitting ? t("contact.button.loading") : t("contact.button.text")}
       </button>
     </form>
   );

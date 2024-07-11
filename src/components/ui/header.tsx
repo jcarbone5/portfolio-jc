@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 //Components
 import { ThemeSwitcher } from "@/components/ui/theme-switcher";
@@ -11,8 +12,10 @@ import { cn } from "@/utils/utils";
 
 //Types
 import { ScrollItemsEnum, ScrollItem } from "@/types/header";
+import { Languages } from "./languages";
 
 export const Header = () => {
+  const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
 
   const scrollToHash = (elementId: ScrollItem) => {
@@ -53,33 +56,35 @@ export const Header = () => {
             "fixed top-7 left-1/2 transform -translate-x-1/2 backdrop-blur bg-gray-300/50 dark:bg-black/30"
         )}
       >
-        <ul className="flex space-x-0 sm:space-x-5 font-light text-sm md:text-base cursor-pointer">
+        <ul className="flex space-x-1 sm:space-x-5 font-light text-sm md:text-base cursor-pointer text-nowrap">
           <li
             className="rounded-full px-4 py-1 hover:bg-gray-300 dark:hover:bg-gray-100/10"
             onClick={() => scrollToHash(ScrollItemsEnum.ABOUT)}
           >
-            <span>About</span>
+            <span>{t("header.about")}</span>
           </li>
           <li
             className="rounded-full px-4 py-1 hover:bg-gray-300 dark:hover:bg-gray-100/10"
             onClick={() => scrollToHash(ScrollItemsEnum.EXPERIENCE)}
           >
-            <span>Experience</span>
+            <span>{t("header.experience")}</span>
           </li>
           <li
             className="rounded-full px-4 py-1 hover:bg-gray-300 dark:hover:bg-gray-100/10"
             onClick={() => scrollToHash(ScrollItemsEnum.SKILLS)}
           >
-            <span>Skills</span>
+            <span>{t("header.skills")}</span>
           </li>
           <li
             className="rounded-full px-4 py-1 hover:bg-gray-300 dark:hover:bg-gray-100/10"
             onClick={() => scrollToHash(ScrollItemsEnum.CONTACT)}
           >
-            <span>Contact</span>
+            <span>{t("header.contact")}</span>
           </li>
         </ul>
       </nav>
+
+      <Languages />
     </motion.header>
   );
 };
