@@ -36,7 +36,7 @@ export const ScrollToTop = () => {
   return (
     <div
       className={cn(
-        "absolute bottom-20 right-3 transition-opacity duration-500",
+        "absolute bottom-20 right-8 sm:right-3 transition-opacity duration-500",
         isVisible ? "opacity-100" : "opacity-0"
       )}
     >

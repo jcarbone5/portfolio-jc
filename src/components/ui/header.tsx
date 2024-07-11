@@ -42,7 +42,7 @@ export const Header = () => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1 }}
       viewport={{ once: true }}
-      className="flex flex-row justify-between items-center mt-8"
+      className="flex flex-col sm:flex-row gap-4 sm:gap-0 justify-between items-center mt-8"
     >
       <ThemeSwitcher />
 
@@ -53,7 +53,7 @@ export const Header = () => {
             "fixed top-7 left-1/2 transform -translate-x-1/2 backdrop-blur bg-gray-300/50 dark:bg-black/30"
         )}
       >
-        <ul className="flex space-x-5 font-light text-sm md:text-base cursor-pointer">
+        <ul className="flex space-x-0 sm:space-x-5 font-light text-sm md:text-base cursor-pointer">
           <li
             className="rounded-full px-4 py-1 hover:bg-gray-300 dark:hover:bg-gray-100/10"
             onClick={() => scrollToHash(ScrollItemsEnum.ABOUT)}
