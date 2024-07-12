@@ -4,6 +4,11 @@ import { z } from "zod";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslation } from "react-i18next";
+import { toast } from "sonner";
+
+//Components
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 //Schema
 import { useContactFormSchema } from "@/lib/schemas";
@@ -39,7 +44,7 @@ export const ContactForm = () => {
       const dataJSON = await response.json();
 
       if (dataJSON) {
-        alert(dataJSON.message);
+        toast.success(dataJSON.message);
         reset();
       }
     } catch (error) {
@@ -49,51 +54,28 @@ export const ContactForm = () => {
 
   return (
     <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
-      <div className="space-y-2">
-        <label className="text-black dark:text-white text-md">
-          {t("contact.labels.name")}
-        </label>
-        <input
-          type="text"
-          placeholder={t("contact.placeholders.name")}
-          className="p-3 rounded-lg w-full text-black bg-gray-100 dark:text-white dark:bg-black/20"
-          {...register("name")}
-        />
-        {errors.name && (
-          <p className="text-md text-red-500">{errors.name.message}</p>
-        )}
-      </div>
+      <Input
+        type="text"
+        label={t("contact.labels.name")}
+        placeholder={t("contact.placeholders.name")}
+        register={register("name")}
+        error={errors?.name?.message}
+      />
 
-      <div className="space-y-2">
-        <label className="text-black dark:text-white text-md">
-          {t("contact.labels.email")}
-        </label>
-        <input
-          type="email"
-          placeholder={t("contact.placeholders.email")}
-          className="p-3 rounded-lg w-full text-black bg-gray-100 dark:text-white dark:bg-black/20"
-          {...register("email")}
-        />
-        {errors.email && (
-          <p className="text-md text-red-500">{errors.email.message}</p>
-        )}
-      </div>
+      <Input
+        type="text"
+        label={t("contact.labels.email")}
+        placeholder={t("contact.placeholders.email")}
+        register={register("email")}
+        error={errors?.email?.message}
+      />
 
-      <div className="space-y-2">
-        <label className="text-black dark:text-white text-md">
-          {t("contact.labels.message")}
-        </label>
-        <textarea
-          placeholder={t("contact.placeholders.message")}
-          cols={30}
-          rows={5}
-          className="p-3 rounded-lg w-full text-black bg-gray-100 dark:text-white dark:bg-black/20"
-          {...register("message")}
-        />
-        {errors.message && (
-          <p className="text-md text-red-500">{errors.message.message}</p>
-        )}
-      </div>
+      <Textarea
+        label={t("contact.labels.message")}
+        placeholder={t("contact.placeholders.message")}
+        register={register("message")}
+        error={errors?.message?.message}
+      />
 
       <button
         type="submit"
