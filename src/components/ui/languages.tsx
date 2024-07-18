@@ -11,9 +11,8 @@ import spain from "@/assets/images/spain-flag.webp";
 //Utils
 import { cn } from "@/utils/utils";
 
-type LanguageKey = "en" | "es";
-
-type Langs = { key: LanguageKey; name: string; icon: StaticImageData }[];
+//Types
+import { Langs, LanguageKey } from "@/types/languages";
 
 export const Languages = () => {
   const { t, i18n } = useTranslation();

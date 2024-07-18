@@ -4,24 +4,14 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 //Utils
-import { cn } from "@/utils/utils";
+import { cn, scrollToHash } from "@/utils/utils";
 
 //Types
-import { ScrollItemsEnum, ScrollItem } from "@/types/header";
+import { ScrollItemsEnum } from "@/types/header";
 
 export const Navbar = () => {
   const { t } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
-
-  const scrollToHash = (elementId: ScrollItem) => {
-    const element = document.getElementById(elementId);
-    if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 70,
-        behavior: "smooth",
-      });
-    }
-  };
 
   useEffect(() => {
     const handleScroll = () => {

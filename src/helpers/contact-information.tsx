@@ -10,5 +10,9 @@ export const contactInformation = [
     link: "https://www.linkedin.com/in/jean-franco-carbone-8a8b00128/",
   },
   { icon: <Github />, title: "Github", link: "https://github.com/jcarbone5" },
-  { icon: <Mail />, title: "jean_f991@hotmail.com" },
+  {
+    icon: <Mail />,
+    title: "jean_f991@hotmail.com",
+    link: "mailto:jean_f991@hotmail.com",
+  },
 ];

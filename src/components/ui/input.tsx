@@ -18,7 +18,6 @@ export const Input = ({
   className,
   ...rest
 }: InputProps) => {
-  console.log(error);
   return (
     <div className="flex flex-col space-y-2 w-full">
       {label && (
