@@ -11,10 +11,10 @@ import Moon from "@/assets/icons/Moon";
 import { cn } from "@/utils/utils";
 
 interface ThemeSwitcherProps {
-  isScrolled: boolean;
+  isScrolled?: boolean;
 }
 
-export const ThemeSwitcher = ({ isScrolled }: ThemeSwitcherProps) => {
+export const ThemeSwitcher = ({ isScrolled = false }: ThemeSwitcherProps) => {
   const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
 
@@ -31,7 +31,7 @@ export const ThemeSwitcher = ({ isScrolled }: ThemeSwitcherProps) => {
   return (
     <div
       className={cn(
-        "flex items-center justify-center cursor-pointer rounded-full p-2 z-10 dark:bg-black/20 transition duration-500 hover:scale-110",
+        "flex items-center justify-center cursor-pointer rounded-full p-2 z-10 bg-gray-100 dark:bg-black/20 transition duration-500 hover:scale-110",
         isScrolled && "backdrop-blur bg-gray-300/50 dark:bg-black/30"
       )}
       onClick={toggleTheme}

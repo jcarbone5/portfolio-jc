@@ -15,6 +15,7 @@ import { ScrollItemsEnum } from "@/types/header";
 
 //Assets
 import Jean from "@/assets/images/jean.webp";
+import { ThemeSwitcher } from "./theme-switcher";
 
 interface SidebarProps {
   isOpen: boolean;
@@ -72,7 +73,8 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
           </ul>
         </nav>
 
-        <div className="flex justify-center">
+        <div className="flex flex-row justify-center gap-5">
+          <ThemeSwitcher />
           <Languages />
         </div>
       </motion.div>

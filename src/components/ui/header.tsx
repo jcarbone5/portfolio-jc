@@ -49,7 +49,7 @@ export const Header = () => {
       <button
         onClick={handleOpenSidebar}
         className={cn(
-          "flex md:hidden items-center justify-center cursor-pointer rounded-full p-2 z-10 dark:bg-black/20 transition duration-500 hover:scale-110",
+          "flex md:hidden items-center justify-center cursor-pointer rounded-full p-2 z-10 bg-gray-100 dark:bg-black/20 transition duration-500 hover:scale-110",
           isScrolled && "backdrop-blur bg-gray-300/50 dark:bg-black/30"
         )}
       >
