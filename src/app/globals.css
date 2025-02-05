@@ -10,6 +10,6 @@
 
 .dark {
   .dark\:bg-body-dark {
-    @apply bg-gradient-to-t from-slate-800 to-teal-700 bg-fixed bg-cover min-h-screen text-white font-kanit;
+    @apply bg-gradient-to-r from-slate-700 to-gray-800 text-white;
   }
 }

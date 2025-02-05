@@ -1,6 +1,6 @@
 "use client";
 
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -14,7 +14,11 @@ import { cn } from "@/utils/utils";
 //Types
 import { Langs, LanguageKey } from "@/types/languages";
 
-export const Languages = () => {
+interface LanguagesProps {
+  isScrolled?: boolean;
+}
+
+export const Languages = ({ isScrolled = false }: LanguagesProps) => {
   const { t, i18n } = useTranslation();
   const [language, setLanguage] = useState<LanguageKey>("en");
 
@@ -29,7 +33,12 @@ export const Languages = () => {
   };
 
   return (
-    <div className="flex flex-row bg-gray-100 dark:bg-black/20 rounded-full px-3 py-2 space-x-3">
+    <div
+      className={cn(
+        "flex flex-row bg-gray-100 dark:bg-black/20 rounded-full px-3 py-2 space-x-3 transition duration-500",
+        isScrolled && "backdrop-blur bg-gray-300/50 dark:bg-black/30"
+      )}
+    >
       {languages.map((lang) => (
         <button
           key={lang.key}
