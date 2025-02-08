@@ -12,6 +12,7 @@ import Redux from "@/assets/skills/Redux";
 import Tailwindcss from "@/assets/skills/Tailwindcss";
 import ReactNative from "@/assets/skills/ReactNative";
 import Git from "@/assets/skills/Git";
+import GitHub from "@/assets/skills/GitHub";
 import MySQL from "@/assets/skills/MySQL";
 import MongoDB from "@/assets/skills/MongoDB";
 
@@ -67,6 +68,10 @@ export const skills = [
   {
     name: "Git",
     icon: <Git />,
+  },
+  {
+    name: "GitHub",
+    icon: <GitHub />,
   },
   {
     name: "MySQL",
