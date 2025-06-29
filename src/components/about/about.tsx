@@ -10,7 +10,8 @@ import { ContactInformation } from "@/components/about/contact-information";
 // import { IconCloud } from "@/components/ui/icon-cloud";
 
 //Assets
-import Jean from "@/assets/images/jean.webp";
+import Jean from "@/assets/images/jeanProfile.webp";
+
 // import { skills } from "@/helpers/skills";
 
 export const About = () => {

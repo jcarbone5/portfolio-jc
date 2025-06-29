@@ -8,8 +8,14 @@
   @apply bg-[#FBFCFD] min-h-screen text-black font-kanit;
 }
 
-.dark {
+/* .dark {
   .dark\:bg-body-dark {
     @apply bg-gradient-to-r from-slate-700 to-gray-800 text-white;
+  }
+} */
+
+.dark {
+  .dark\:bg-body-dark {
+    @apply bg-gradient-to-r from-slate-800 to-gray-900 text-white;
   }
 }

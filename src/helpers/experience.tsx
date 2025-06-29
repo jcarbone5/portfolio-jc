@@ -4,10 +4,17 @@ import Apraful from "@/assets/images/companies/apraful_logo.webp";
 import Geocom from "@/assets/images/companies/geocom_uruguay_logo.webp";
 import Universal from "@/assets/images/companies/universal_logo.webp";
 import Netviax from "@/assets/images/companies/netviax_logo.webp";
+import TeamSportsMedia from "@/assets/images/companies/tsm_logo.png";
 
 export const timelineItems = [
   {
-    date: "Nov. 2021 - Present",
+    date: "Apr. 2025 - Present",
+    title: "Senior Frontend Developer - Team Sports Media",
+    url: "https://teamsportsmedia.net/",
+    companyLogo: TeamSportsMedia,
+  },
+  {
+    date: "Nov. 2021 - Apr. 2025",
     title: "Frontend Developer - GoGrow",
     url: "https://www.gogrow.dev",
     companyLogo: GoGrow,

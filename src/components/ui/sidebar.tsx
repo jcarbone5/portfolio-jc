@@ -14,7 +14,7 @@ import { scrollToHash } from "@/utils/utils";
 import { ScrollItemsEnum } from "@/types/header";
 
 //Assets
-import Jean from "@/assets/images/jean.webp";
+import Jean from "@/assets/images/jeanProfile.webp";
 import { ThemeSwitcher } from "./theme-switcher";
 
 interface SidebarProps {
@@ -47,7 +47,7 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
         initial={{ x: -400 }}
         animate={{ x: isOpen ? 0 : -400 }}
         transition={{ duration: 0.3 }}
-        className="fixed inset-y-0 left-0 w-64 bg-white dark:bg-gray-800 shadow-lg z-20"
+        className="fixed inset-y-0 left-0 w-64 bg-white dark:bg-gray-900 shadow-lg z-20"
       >
         <div className="flex justify-center">
           <Image

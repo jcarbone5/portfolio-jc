@@ -15,6 +15,11 @@ import Git from "@/assets/skills/Git";
 import GitHub from "@/assets/skills/GitHub";
 import MySQL from "@/assets/skills/MySQL";
 import MongoDB from "@/assets/skills/MongoDB";
+import Prisma from "@/assets/skills/Prisma";
+import PostgreSQL from "@/assets/skills/PostgreSQL";
+import NestJS from "@/assets/skills/NestJS";
+import ReactQuery from "@/assets/skills/ReactQuery";
+import TypeScript from "@/assets/skills/Typescript";
 
 export const skills = [
   {
@@ -38,16 +43,12 @@ export const skills = [
     icon: <Javascript />,
   },
   {
+    name: "TypeScript",
+    icon: <TypeScript />,
+  },
+  {
     name: "Redux",
     icon: <Redux />,
-  },
-  {
-    name: "Node.js",
-    icon: <Node />,
-  },
-  {
-    name: "Express.js",
-    icon: <Express />,
   },
   {
     name: "HTML",
@@ -62,6 +63,26 @@ export const skills = [
     icon: <Tailwindcss />,
   },
   {
+    name: "React Query",
+    icon: <ReactQuery />,
+  },
+  {
+    name: "Prisma",
+    icon: <Prisma />,
+  },
+  {
+    name: "Node.js",
+    icon: <Node />,
+  },
+  {
+    name: "Express.js",
+    icon: <Express />,
+  },
+  {
+    name: "NestJS",
+    icon: <NestJS />,
+  },
+  {
     name: "Genexus",
     icon: <Genexus />,
   },
@@ -74,8 +95,8 @@ export const skills = [
     icon: <GitHub />,
   },
   {
-    name: "MySQL",
-    icon: <MySQL />,
+    name: "PostgreSQL",
+    icon: <PostgreSQL />,
   },
   {
     name: "MongoDB",
