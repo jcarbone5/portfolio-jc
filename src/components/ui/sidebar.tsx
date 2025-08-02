@@ -44,33 +44,60 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
   return (
     <>
       <motion.div
-        initial={{ x: -400 }}
-        animate={{ x: isOpen ? 0 : -400 }}
-        transition={{ duration: 0.3 }}
-        className="fixed inset-y-0 left-0 w-64 bg-white dark:bg-gray-900 shadow-lg z-20"
+        initial={{ x: -400, opacity: 0 }}
+        animate={{ 
+          x: isOpen ? 0 : -400,
+          opacity: isOpen ? 1 : 0
+        }}
+        transition={{ 
+          type: "spring",
+          stiffness: 300,
+          damping: 30,
+          mass: 0.8
+        }}
+        className="fixed inset-y-0 left-0 w-72 bg-white/90 dark:bg-slate-900/90 shadow-xl backdrop-blur-lg z-20 border-r border-slate-200 dark:border-slate-700"
       >
         <div className="flex justify-center">
-          <Image
-            src={Jean}
-            alt="Jean Carbone"
-            className="h-16 w-16 object-cover rounded-full shadow-md my-5"
-          />
+          <motion.div
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.3 }}
+          >
+            <Image
+              src={Jean}
+              alt="Jean Carbone"
+              className="h-20 w-20 object-cover rounded-full shadow-xl ring-2 ring-slate-200 dark:ring-slate-700 my-8"
+            />
+          </motion.div>
         </div>
 
-        <nav className="p-4">
-          <ul>
+        <nav className="p-6">
+          <motion.ul
+            initial="closed"
+            animate="open"
+            variants={{
+              open: {
+                transition: { staggerChildren: 0.1, delayChildren: 0.3 }
+              },
+              closed: {}
+            }}
+          >
             {menuOptions.map((option) => (
-              <li
+              <motion.li
                 key={option.id}
-                className="rounded-full px-4 py-1 hover:bg-gray-300 dark:hover:bg-gray-100/10 cursor-pointer mb-5"
+                variants={{
+                  open: { x: 0, opacity: 1 },
+                  closed: { x: -20, opacity: 0 }
+                }}
+                className="rounded-xl px-6 py-3 hover:bg-white dark:hover:bg-slate-800 cursor-pointer mb-3 transition-all duration-300 hover:shadow-md"
                 onClick={() => handleItemClick(option.section)}
               >
-                <span className="text-gray-700 dark:text-gray-200">
+                <span className="text-slate-700 dark:text-slate-200 font-medium">
                   {option.label}
                 </span>
-              </li>
+              </motion.li>
             ))}
-          </ul>
+          </motion.ul>
         </nav>
 
         <div className="flex flex-row justify-center gap-5">
@@ -79,12 +106,13 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
         </div>
       </motion.div>
 
-      {isOpen && (
-        <div
-          onClick={onClose}
-          className="fixed inset-0 bg-black bg-opacity-50 z-10"
-        />
-      )}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isOpen ? 1 : 0 }}
+        transition={{ duration: 0.3 }}
+        onClick={onClose}
+        className={`fixed inset-0 bg-slate-900/30 backdrop-blur-sm z-10 ${!isOpen && 'pointer-events-none'}`}
+      />
     </>
   );
 };

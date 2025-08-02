@@ -18,9 +18,9 @@ export const TimelineItem = ({
   companyLogo,
 }: TimelineItemProps) => (
   <li className="mb-10 ms-4">
-    <div className="absolute w-3 h-3 bg-gray-300 rounded-full mt-1.5 -start-1.5 border border-white" />
+    <div className="absolute w-4 h-4 bg-white dark:bg-slate-800 rounded-full mt-1.5 -start-2 border-2 border-slate-300 dark:border-slate-600 shadow-sm" />
 
-    <span className="mb-1 text-sm font-normal leading-none text-black dark:text-white">
+    <span className="mb-2 text-sm font-medium leading-none text-slate-600 dark:text-slate-400">
       {date}
     </span>
 
@@ -28,11 +28,11 @@ export const TimelineItem = ({
       <Image
         src={companyLogo}
         alt="Company Logo"
-        className="h-16 w-16 rounded-lg object-cover my-3"
+        className="h-16 w-16 rounded-xl object-cover my-3 shadow-md ring-1 ring-slate-200 dark:ring-slate-700"
       />
 
       <div className="flex flex-col">
-        <h3 className="text-sm sm:text-lg font-semibold text-black dark:text-white mb-1">
+        <h3 className="text-base sm:text-lg font-semibold text-slate-800 dark:text-slate-200 mb-2">
           {title}
         </h3>
 
@@ -40,7 +40,7 @@ export const TimelineItem = ({
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-row items-center gap-2 px-3 py-2 sm:px-4 sm:py-2 bg-gray-100 text-gray-900 dark:bg-black/20 dark:text-white rounded-full w-fit text-xs sm:text-sm font-light"
+          className="flex flex-row items-center gap-2 px-4 py-2 bg-white/80 text-slate-600 dark:bg-slate-800/80 dark:text-slate-300 rounded-full w-fit text-xs sm:text-sm font-medium hover:bg-white dark:hover:bg-slate-700/90 transition-colors shadow-sm backdrop-blur-sm"
         >
           <Globe className="h-4 w-4 sm:h-6 sm:w-6" />
           <span>{url}</span>

@@ -5,17 +5,11 @@
 @tailwind utilities;
 
 .bg-body {
-  @apply bg-[#FBFCFD] min-h-screen text-black font-kanit;
+  @apply bg-slate-50 min-h-screen text-slate-800 font-kanit;
 }
-
-/* .dark {
-  .dark\:bg-body-dark {
-    @apply bg-gradient-to-r from-slate-700 to-gray-800 text-white;
-  }
-} */
 
 .dark {
   .dark\:bg-body-dark {
-    @apply bg-gradient-to-r from-slate-800 to-gray-900 text-white;
+    @apply bg-slate-900 text-slate-100;
   }
 }

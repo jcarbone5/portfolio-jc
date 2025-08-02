@@ -23,7 +23,7 @@ export const Input = ({
       {label && (
         <label
           className={cn(
-            "text-black dark:text-white text-md",
+            "text-slate-700 dark:text-slate-300 text-sm font-medium",
             error && "text-red-500 dark:text-red-500"
           )}
         >
@@ -33,7 +33,7 @@ export const Input = ({
       <input
         type={type}
         className={cn(
-          "p-3 rounded-lg w-full text-black bg-gray-100 dark:text-white dark:bg-black/20",
+          "px-4 py-3 rounded-xl w-full text-slate-800 bg-white dark:text-slate-200 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 focus:border-teal-500 dark:focus:border-teal-400 focus:ring-2 focus:ring-teal-500/20 dark:focus:ring-teal-400/20 outline-none transition-all duration-200",
           className
         )}
         {...register}

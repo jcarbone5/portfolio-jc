@@ -9,15 +9,28 @@ interface SkillsListItemPros {
 
 export const SkillsListItem = ({ icon, name }: SkillsListItemPros) => {
   return (
-    <motion.div
-      key={name}
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-      className="flex flex-col justify-center space-y-5 items-center bg-gray-100 dark:bg-black/30 p-6 rounded-lg"
-    >
-      <div className="hover:scale-125 transition duration-300">{icon}</div>
-      <h3 className="text-lg text-gray-900 dark:text-white/80">{name}</h3>
-    </motion.div>
+    <div className="flex flex-col justify-center space-y-5 items-center bg-white/80 dark:bg-slate-800/80 p-6 rounded-xl shadow-md backdrop-blur-sm hover:bg-white dark:hover:bg-slate-700/90 transition-all duration-500 group hover:shadow-lg">
+      <motion.div 
+        className="relative z-10"
+        whileHover={{ 
+          scale: 1.15,
+          transition: { 
+            type: "spring",
+            stiffness: 400,
+            damping: 17
+          }
+        }}
+      >
+        {icon}
+      </motion.div>
+      <motion.h3 
+        className="text-lg font-medium text-slate-700 dark:text-slate-300 group-hover:text-slate-900 dark:group-hover:text-slate-100"
+        initial={{ opacity: 0.8 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.3 }}
+      >
+        {name}
+      </motion.h3>
+    </div>
   );
 };

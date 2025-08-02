@@ -33,24 +33,43 @@ export const Languages = ({ isScrolled = false }: LanguagesProps) => {
   };
 
   return (
-    <div
-      className={cn(
-        "flex flex-row bg-gray-100 dark:bg-black/20 rounded-full px-3 py-2 space-x-3 transition duration-500",
-        isScrolled && "backdrop-blur bg-gray-300/50 dark:bg-black/30"
-      )}
-    >
+    <div className="flex items-center gap-2">
       {languages.map((lang) => (
         <button
           key={lang.key}
           onClick={() => changeLanguage(lang.key)}
-          className={cn(
-            "border rounded-full transition duration-200",
-            language === lang.key
-              ? "border-gray-900 dark:border-white"
-              : "border-transparent"
-          )}
+          className="group relative flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300"
+          title={lang.name}
         >
-          <Image width={23} height={23} src={lang.icon} alt={lang.name} />
+          <div className={cn(
+            "relative z-10 transition-all duration-300",
+            language === lang.key 
+              ? "scale-105" 
+              : "opacity-70 group-hover:opacity-100 group-hover:scale-105"
+          )}>
+            <Image 
+              width={24} 
+              height={24} 
+              src={lang.icon} 
+              alt={lang.name}
+              className="rounded-full"
+            />
+          </div>
+
+          <div className={cn(
+            "absolute inset-0 rounded-full transition-all duration-300",
+            language === lang.key
+              ? "bg-gradient-to-r from-teal-500/10 to-teal-400/10 dark:from-teal-400/10 dark:to-teal-300/10"
+              : "opacity-0 group-hover:opacity-100 bg-gradient-to-r from-slate-200/50 to-slate-300/50 dark:from-slate-700/50 dark:to-slate-600/50"
+          )} />
+
+          {language === lang.key && (
+            <div className={cn(
+              "absolute -inset-1 rounded-full transition-all duration-300 blur-sm bg-gradient-to-r",
+              "from-teal-500/20 via-teal-400/20 to-teal-500/20 dark:from-teal-400/20 dark:via-teal-300/20 dark:to-teal-400/20",
+              "animate-pulse-subtle"
+            )} />
+          )}
         </button>
       ))}
     </div>
