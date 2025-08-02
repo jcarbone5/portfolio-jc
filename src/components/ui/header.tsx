@@ -65,7 +65,7 @@ export const Header = () => {
           : "scale-100 py-4"
       )}>
         <div className="transition-all duration-500 ease-out-expo">
-          <ThemeSwitcher isScrolled={isScrolled} />
+          <ThemeSwitcher />
         </div>
 
         <Navbar isScrolled={isScrolled} />
