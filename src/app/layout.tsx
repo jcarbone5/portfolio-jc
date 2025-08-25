@@ -5,7 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { Providers } from "./providers";
 
 export const metadata: Metadata = {
-  title: "Frontend Developer Portfolio - Jean Carbone",
+  title: "Senior Frontend Developer - Jean Carbone",
   description: "Welcome to my portfolio!",
 };
 
